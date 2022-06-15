@@ -1,5 +1,4 @@
 #this is my Apache playbook
-#This is to test the change online
 #Second attempt to make change from online
 - hosts: Node3
   tasks:
