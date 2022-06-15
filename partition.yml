@@ -1,3 +1,4 @@
+#test 1
 - hosts: Node1
   tasks:
   - name: Create a partition with a size of 2GiB
