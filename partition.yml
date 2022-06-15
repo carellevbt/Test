@@ -1,0 +1,8 @@
+- hosts: Node1
+  tasks:
+  - name: Create a partition with a size of 2GiB
+    community.general.parted:
+     device: /dev/nvme0n2
+     number: 1
+     state: present
+     part_end: 2GiB
