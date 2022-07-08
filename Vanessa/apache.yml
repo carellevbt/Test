@@ -1,0 +1,28 @@
+#coopied into Vanessa Directory
+#added lines 22 - 26
+- hosts: Node3
+  tasks:
+  - name: Install httpd
+    yum:
+     name: httpd
+     state: latest
+
+  - name: Start and Enable httpd
+    service:
+     name: httpd
+     state: started
+     enabled: yes
+
+  - name: allow http to the firewall
+    ansible.posix.firewalld:
+     service: https
+     permanent: yes
+     state: enabled
+
+  - name: Add the line to the file
+    ansible.builtin.lineinfile:
+     path: /var/www/html/index.html
+     line: 'This is from my Playbook'
+     create: yes
+
+
